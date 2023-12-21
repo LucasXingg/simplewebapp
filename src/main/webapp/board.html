@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="tutorial" width="1300" height="1500"></canvas>
+    <p id="p">
+        asasasas
+    </p>
+
+    <script>
+
+        var layout = new Array(
+            [-1, -1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, -1, 1, 1, 1, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, -1, -1,],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1,],
+            [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1,],
+            [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1,],
+            [-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1,],
+            [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1,],
+            [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1,],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1,],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+            [-1, -1, -1, -1, 2, 2, 2, 2, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, -1, 2, 2, 2, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, -1, 2, 2, -1, -1, -1, -1, -1, -1,],
+            [-1, -1, -1, -1, -1, -1, 2, -1, -1, -1, -1, -1, -1,],
+        );
+        var mycanvas = document.getElementById('tutorial');
+        var ctx = mycanvas.getContext('2d');
+
+        var p = document.getElementById('p');
+
+        // p.innerHTML="aaa";
+
+        
+        for(let i = 0; i < layout.length; i++){
+            for(let j = 0; j < layout[0].length; j++){
+                console.log(layout[i][j]);
+                if(!(layout[i][j] == -1)){
+                    p.innerHTML="aaa";
+                    ctx.beginPath();
+                    // ctx.arc(100*i-(i%2-1)*50, 86.6*j, 60, 0, Math.PI * 2, false);
+                    ctx.arc(86.6*j, 100*i-(i%2-1)*50, 60, 0, Math.PI * 2, false);
+                    ctx.stroke();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

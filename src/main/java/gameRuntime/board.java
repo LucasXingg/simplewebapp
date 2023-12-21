@@ -155,7 +155,7 @@ public class board {
     }
     
     public void makeMove(Integer[] origin, Integer[] dest) throws invalidMoveException{
-        if(!currentPlayer.equals(this.boardLayout[origin[0]][origin[1]])){
+        if(!this.currentPlayer.equals(this.boardLayout[origin[0]][origin[1]])){
             throw new invalidMoveException("Chese not in position");
         }
         this.boardLayout[origin[0]][origin[1]] = 0;
@@ -176,5 +176,23 @@ public class board {
             validMoves = join2DArray(validMoves, new Integer[][]{{validMove[0], validMove[1]}});
         }
         return validMoves;
+    }
+
+    public void drawBoard(){
+        for(Integer[] row:this.boardLayout){
+            for(Integer element:row){
+                switch(element){
+                    case -1:
+                        System.out.print("-1 ");
+                        break;
+                    default:
+                        System.out.print(" ");
+                        System.out.print(element);
+                        System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("");
     }
 }
