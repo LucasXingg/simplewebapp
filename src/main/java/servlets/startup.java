@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Sample servlet class for login related methods
  */
-public class LoginServlet extends HttpServlet {
+public class startup extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
