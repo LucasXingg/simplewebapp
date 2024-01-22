@@ -34,20 +34,20 @@
         );
         var mycanvas = document.getElementById('tutorial');
         var ctx = mycanvas.getContext('2d');
+        var canvasHeight = window.innerHeight * 0.8;
+        var canvasWidth = window.innerHeight * 0.4 * Math.sqrt(3);
 
-        var p = document.getElementById('p');
-
-        // p.innerHTML="aaa";
+        ctx.canvas.height = canvasHeight;
+        ctx.canvas.width = canvasWidth;
 
         
         for(let i = 0; i < layout.length; i++){
             for(let j = 0; j < layout[0].length; j++){
                 console.log(layout[i][j]);
                 if(!(layout[i][j] == -1)){
-                    p.innerHTML="aaa";
                     ctx.beginPath();
-                    // ctx.arc(100*i-(i%2-1)*50, 86.6*j, 60, 0, Math.PI * 2, false);
-                    ctx.arc(86.6*j, 100*i-(i%2-1)*50, 60, 0, Math.PI * 2, false);
+                    // ctx.arc(100*(j+1)+(i%2)*50-50, 86.6*i+43.3, 40, 0, Math.PI * 2, false);
+                    ctx.arc(canvasWidth/13*(j+1)+(i%2-1)*canvasWidth/26, canvasHeight/17*i+canvasHeight/34, canvasWidth/26*0.8, 0, Math.PI * 2, false);
                     ctx.stroke();
                 }
             }
